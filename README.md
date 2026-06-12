@@ -130,6 +130,8 @@ The production frontend uses `VITE_API_URL` to reach the Render backend.
 The backend uses `FRONTEND_URL` for CORS.  
 `GITHUB_TOKEN` is optional but recommended for higher GitHub API rate limits.
 
+Uptime monitoring can target the backend health endpoint at `/api/health`.
+
 ## Recruiter walkthrough
 
 1. Start on Overview to understand what the tool does.

@@ -74,17 +74,14 @@ export const getMonitor = asyncHandler(async (_req: Request, res: Response) => {
 
 export const getHealth = asyncHandler(async (_req: Request, res: Response) => {
   const dbStatus = await getDatabaseStatus();
-  const dashboard = await repository.getDashboardData();
 
   res.json({
     status: 'ok',
     service: 'GitHub Repository Insights API',
-    version: '1.0.0',
-    timestamp: new Date().toISOString(),
     database: dbStatus,
     github: {
-      tokenConfigured: Boolean(process.env.GITHUB_TOKEN),
-      rateLimit: dashboard.rateLimit,
+      tokenConfigured: Boolean(env.githubToken),
+      rateLimit: github.getRateLimitStatus(),
     },
   });
 });

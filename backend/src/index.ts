@@ -41,7 +41,6 @@ app.get('/', (_req, res) => {
     service: 'GitHub Repository Insights API',
     status: 'ok',
     health: '/api/health',
-    monitor: '/api/monitor',
   });
 });
 
